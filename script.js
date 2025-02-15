@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const link = document.getElementById('link').value;
         const platform = document.getElementById('platform').value;
 
-        fetch('http://localhost:5000/api/appLinks/add', {
+        fetch('https://app-backend-6vf7.onrender.com/api/appLinks/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
    // Fetch all app links and display them
 function fetchAppLinks() {
     console.log('Fetching app links...'); // Log when the function is called
-    fetch('http://localhost:5000/api/appLinks')
+    fetch('https://app-backend-6vf7.onrender.com/api/appLinks')
         .then(response => response.json())
         .then(data => {
             console.log('Fetched app links:', data); // Log the fetched data to check if it's correct
@@ -55,7 +55,7 @@ function fetchAppLinks() {
 // Define the deleteAppLink function in the global scope
 function deleteAppLink(id) {
     console.log(`Deleting app link with id: ${id}`); // Log the id of the link being deleted
-    fetch(`http://localhost:5000/api/appLinks/${id}`, {
+    fetch(`https://app-backend-6vf7.onrender.com/api/appLinks/${id}`, {
         method: 'DELETE',
     })
     .then(response => response.json())
